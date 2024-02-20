@@ -230,6 +230,10 @@ class MultipleRenderTargetsApplication : public our::Application {
 
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, frame_buffer);
 
+	glBindFragDataLocation(program, 0, "frag_color");
+	glBindFragDataLocation(program, 1, "tex_coord");
+	glBindFragDataLocation(program, 2, "tex_coord_derivative");
+
         GLenum const draw_buffers[] = {
                 GL_COLOR_ATTACHMENT0,
                 GL_COLOR_ATTACHMENT1,
